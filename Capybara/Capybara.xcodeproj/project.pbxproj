@@ -15,6 +15,7 @@
 		73E7BF6B2AA9F09800C98894 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E7BF6A2AA9F09800C98894 /* AppDelegate.swift */; };
 		73E7BF6F2AA9F2D900C98894 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 73E7BF6E2AA9F2D900C98894 /* FirebaseDatabase */; };
 		73E7BF712AA9F2D900C98894 /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 73E7BF702AA9F2D900C98894 /* FirebaseDatabaseSwift */; };
+		F412981E2AAA156B00C7F270 /* MotionDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F412981D2AAA156B00C7F270 /* MotionDataManager.swift */; };
 		F4BD74FF2AA9DEDA002B4FCE /* CapybaraApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BD74FE2AA9DEDA002B4FCE /* CapybaraApp.swift */; };
 		F4BD75012AA9DEDA002B4FCE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BD75002AA9DEDA002B4FCE /* ContentView.swift */; };
 		F4BD75032AA9DEDB002B4FCE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4BD75022AA9DEDB002B4FCE /* Assets.xcassets */; };
@@ -29,6 +30,7 @@
 		73A4FF7E2AAA12020060B736 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		73A4FF802AAA123E0060B736 /* DatabaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseRepository.swift; sourceTree = "<group>"; };
 		73E7BF6A2AA9F09800C98894 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F412981D2AAA156B00C7F270 /* MotionDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionDataManager.swift; sourceTree = "<group>"; };
 		F4BD74FB2AA9DEDA002B4FCE /* Capybara.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Capybara.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4BD74FE2AA9DEDA002B4FCE /* CapybaraApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapybaraApp.swift; sourceTree = "<group>"; };
 		F4BD75002AA9DEDA002B4FCE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -57,6 +59,40 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F41298162AAA127600C7F270 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F4BD75002AA9DEDA002B4FCE /* ContentView.swift */,
+				73A4FF7C2AAA02030060B736 /* StartVotingView.swift */,
+				F4BD750E2AA9E18D002B4FCE /* ProjectView.swift */,
+				F4BD75102AA9E1DA002B4FCE /* GameView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F41298172AAA129000C7F270 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F41298182AAA12BD00C7F270 /* Environments */ = {
+			isa = PBXGroup;
+			children = (
+				F4BD75022AA9DEDB002B4FCE /* Assets.xcassets */,
+			);
+			path = Environments;
+			sourceTree = "<group>";
+		};
+		F412981C2AAA154700C7F270 /* BusinessLogic */ = {
+			isa = PBXGroup;
+			children = (
+				F412981D2AAA156B00C7F270 /* MotionDataManager.swift */,
+			);
+			path = BusinessLogic;
 			sourceTree = "<group>";
 		};
 		F4BD74F22AA9DEDA002B4FCE = {
@@ -89,6 +125,10 @@
 				73A4FF7E2AAA12020060B736 /* CategoryView.swift */,
 				F4BD75102AA9E1DA002B4FCE /* GameView.swift */,
 				F4BD75022AA9DEDB002B4FCE /* Assets.xcassets */,
+				F41298172AAA129000C7F270 /* Model */,
+				F41298162AAA127600C7F270 /* View */,
+				F412981C2AAA154700C7F270 /* BusinessLogic */,
+				F41298182AAA12BD00C7F270 /* Environments */,
 				F4BD75042AA9DEDB002B4FCE /* Preview Content */,
 			);
 			path = Capybara;
@@ -189,6 +229,7 @@
 				F4BD750F2AA9E18D002B4FCE /* ProjectView.swift in Sources */,
 				F4BD75112AA9E1DA002B4FCE /* GameView.swift in Sources */,
 				F4BD74FF2AA9DEDA002B4FCE /* CapybaraApp.swift in Sources */,
+				F412981E2AAA156B00C7F270 /* MotionDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
