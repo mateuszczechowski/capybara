@@ -12,13 +12,14 @@ struct ContentView: View {
         TabView {
             ProjectView()
                 .tabItem {
-                    Label("Vote", image: "checkmark.bubble.fill")
+                    Label("Vote", image: "Vote")
                 }
             GameView()
                 .tabItem {
-                    Label("Capybara", image: "")
+                    Label("Capybara", image: "Capybara")
                 }
         }
+        .tint(.brown)
     }
 }
 
