@@ -9,12 +9,13 @@ import SwiftUI
 
 @main
 struct CapybaraApp: App {
-
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    @StateObject private var motionDataManager = MotionDataManager()
 
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(motionDataManager)
         }
     }
 }

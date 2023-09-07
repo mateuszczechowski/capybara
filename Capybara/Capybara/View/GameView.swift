@@ -8,8 +8,12 @@
 import SwiftUI
 
 struct GameView: View {
+    @EnvironmentObject private var motionDataManager: MotionDataManager
+
     var body: some View {
-        Canvas { context, size in
+        motionDataManager.motionManager.startGyroUpdates()
+
+        return Canvas { context, size in
             
 
             let ballDiameter = min(size.width, size.height) * 0.1
@@ -28,5 +32,6 @@ struct GameView: View {
 struct GameView_Previews: PreviewProvider {
     static var previews: some View {
         GameView()
+            .environmentObject(MotionDataManager())
     }
 }
