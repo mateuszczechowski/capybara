@@ -11,7 +11,7 @@
 		F4BD75012AA9DEDA002B4FCE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BD75002AA9DEDA002B4FCE /* ContentView.swift */; };
 		F4BD75032AA9DEDB002B4FCE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4BD75022AA9DEDB002B4FCE /* Assets.xcassets */; };
 		F4BD75062AA9DEDB002B4FCE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4BD75052AA9DEDB002B4FCE /* Preview Assets.xcassets */; };
-		F4BD750F2AA9E18D002B4FCE /* PizzaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BD750E2AA9E18D002B4FCE /* PizzaView.swift */; };
+		F4BD750F2AA9E18D002B4FCE /* ProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BD750E2AA9E18D002B4FCE /* ProjectView.swift */; };
 		F4BD75112AA9E1DA002B4FCE /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BD75102AA9E1DA002B4FCE /* GameView.swift */; };
 /* End PBXBuildFile section */
 
@@ -21,7 +21,7 @@
 		F4BD75002AA9DEDA002B4FCE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F4BD75022AA9DEDB002B4FCE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F4BD75052AA9DEDB002B4FCE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		F4BD750E2AA9E18D002B4FCE /* PizzaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaView.swift; sourceTree = "<group>"; };
+		F4BD750E2AA9E18D002B4FCE /* ProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectView.swift; sourceTree = "<group>"; };
 		F4BD75102AA9E1DA002B4FCE /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -57,7 +57,7 @@
 			children = (
 				F4BD74FE2AA9DEDA002B4FCE /* CapybaraApp.swift */,
 				F4BD75002AA9DEDA002B4FCE /* ContentView.swift */,
-				F4BD750E2AA9E18D002B4FCE /* PizzaView.swift */,
+				F4BD750E2AA9E18D002B4FCE /* ProjectView.swift */,
 				F4BD75102AA9E1DA002B4FCE /* GameView.swift */,
 				F4BD75022AA9DEDB002B4FCE /* Assets.xcassets */,
 				F4BD75042AA9DEDB002B4FCE /* Preview Content */,
@@ -144,7 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4BD75012AA9DEDA002B4FCE /* ContentView.swift in Sources */,
-				F4BD750F2AA9E18D002B4FCE /* PizzaView.swift in Sources */,
+				F4BD750F2AA9E18D002B4FCE /* ProjectView.swift in Sources */,
 				F4BD75112AA9E1DA002B4FCE /* GameView.swift in Sources */,
 				F4BD74FF2AA9DEDA002B4FCE /* CapybaraApp.swift in Sources */,
 			);
