@@ -9,7 +9,9 @@ import SwiftUI
 
 struct GameView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Canvas { context, size in
+            let ballOrigin = CGPoint(x: size.width * 0.5, y: size.height)
+        }
     }
 }
 
