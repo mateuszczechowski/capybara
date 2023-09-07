@@ -11,6 +11,8 @@ struct StartVotingView: View {
 
     @State private var isVotingPopoverPresented: Bool = false
 
+    let repository: DatabaseRepository
+
     var body: some View {
         
         Button(action: {
@@ -31,6 +33,6 @@ struct StartVotingView: View {
 
 struct StartVotingView_Previews: PreviewProvider {
     static var previews: some View {
-        StartVotingView()
+        StartVotingView(repository: DatabaseRepository())
     }
 }
