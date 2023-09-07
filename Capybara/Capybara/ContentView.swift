@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         TabView {
-            ProjectView()
+            StartVotingView()
                 .tabItem {
                     Label("Vote", systemImage: "checkmark.bubble.fill")
                 }
