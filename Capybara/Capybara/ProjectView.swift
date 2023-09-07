@@ -6,8 +6,12 @@
 //
 
 import SwiftUI
+import FirebaseDatabase
 
 struct ProjectView: View {
+
+    @Binding var isPresented: Bool
+    
     var body: some View {
 
         NavigationStack {
@@ -18,6 +22,16 @@ struct ProjectView: View {
             .toolbar {
                 Button {
                     print("Adding project logic.")
+                    let ref = Database.database(url: "https://capybara-d1f5f-default-rtdb.europe-west1.firebasedatabase.app").reference()
+                    ref.child("category").getData(completion:  { error, snapshot in
+                        guard error == nil else {
+                            print(error!.localizedDescription)
+                            return;
+                        }
+                        let test = snapshot?.value
+                        print("@@@ TEST: ", test)
+                    })
+                    self.isPresented = false
                 } label: {
                     Image(systemName: "plus")
                 }
@@ -26,11 +40,5 @@ struct ProjectView: View {
         }
 
 //        .navigationBarTitleDisplayMode(.automatic)
-    }
-}
-
-struct PizzaView_Previews: PreviewProvider {
-    static var previews: some View {
-        ProjectView()
     }
 }

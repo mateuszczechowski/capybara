@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		738A65502AA9F56100D2E27F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 738A654F2AA9F56100D2E27F /* GoogleService-Info.plist */; };
+		73A4FF7D2AAA02030060B736 /* StartVotingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A4FF7C2AAA02030060B736 /* StartVotingView.swift */; };
 		73E7BF692AA9E4F800C98894 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 73E7BF682AA9E4F800C98894 /* FirebaseAnalyticsWithoutAdIdSupport */; };
 		73E7BF6B2AA9F09800C98894 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E7BF6A2AA9F09800C98894 /* AppDelegate.swift */; };
 		73E7BF6F2AA9F2D900C98894 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 73E7BF6E2AA9F2D900C98894 /* FirebaseDatabase */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		738A654F2AA9F56100D2E27F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		73A4FF7C2AAA02030060B736 /* StartVotingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartVotingView.swift; sourceTree = "<group>"; };
 		73E7BF6A2AA9F09800C98894 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4BD74FB2AA9DEDA002B4FCE /* Capybara.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Capybara.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4BD74FE2AA9DEDA002B4FCE /* CapybaraApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapybaraApp.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 				F4BD74FE2AA9DEDA002B4FCE /* CapybaraApp.swift */,
 				73E7BF6A2AA9F09800C98894 /* AppDelegate.swift */,
 				F4BD75002AA9DEDA002B4FCE /* ContentView.swift */,
+				73A4FF7C2AAA02030060B736 /* StartVotingView.swift */,
 				F4BD750E2AA9E18D002B4FCE /* ProjectView.swift */,
 				F4BD75102AA9E1DA002B4FCE /* GameView.swift */,
 				F4BD75022AA9DEDB002B4FCE /* Assets.xcassets */,
@@ -172,6 +175,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73A4FF7D2AAA02030060B736 /* StartVotingView.swift in Sources */,
 				73E7BF6B2AA9F09800C98894 /* AppDelegate.swift in Sources */,
 				F4BD75012AA9DEDA002B4FCE /* ContentView.swift in Sources */,
 				F4BD750F2AA9E18D002B4FCE /* ProjectView.swift in Sources */,
