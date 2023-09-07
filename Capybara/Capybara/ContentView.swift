@@ -12,7 +12,7 @@ struct ContentView: View {
         TabView {
             ProjectView()
                 .tabItem {
-                    Label("Pizza", image: "")
+                    Label("Vote", systemImage: "checkmark.bubble.fill")
                 }
             GameView()
                 .tabItem {
