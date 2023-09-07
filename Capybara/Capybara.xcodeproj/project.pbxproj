@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		738A65502AA9F56100D2E27F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 738A654F2AA9F56100D2E27F /* GoogleService-Info.plist */; };
 		73A4FF7D2AAA02030060B736 /* StartVotingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A4FF7C2AAA02030060B736 /* StartVotingView.swift */; };
+		73A4FF7F2AAA12020060B736 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A4FF7E2AAA12020060B736 /* CategoryView.swift */; };
+		73A4FF812AAA123E0060B736 /* DatabaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A4FF802AAA123E0060B736 /* DatabaseRepository.swift */; };
 		73E7BF692AA9E4F800C98894 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 73E7BF682AA9E4F800C98894 /* FirebaseAnalyticsWithoutAdIdSupport */; };
 		73E7BF6B2AA9F09800C98894 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E7BF6A2AA9F09800C98894 /* AppDelegate.swift */; };
 		73E7BF6F2AA9F2D900C98894 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 73E7BF6E2AA9F2D900C98894 /* FirebaseDatabase */; };
@@ -25,6 +27,8 @@
 /* Begin PBXFileReference section */
 		738A654F2AA9F56100D2E27F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		73A4FF7C2AAA02030060B736 /* StartVotingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartVotingView.swift; sourceTree = "<group>"; };
+		73A4FF7E2AAA12020060B736 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
+		73A4FF802AAA123E0060B736 /* DatabaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseRepository.swift; sourceTree = "<group>"; };
 		73E7BF6A2AA9F09800C98894 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F412981D2AAA156B00C7F270 /* MotionDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionDataManager.swift; sourceTree = "<group>"; };
 		F4BD74FB2AA9DEDA002B4FCE /* Capybara.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Capybara.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,13 +72,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		F41298172AAA129000C7F270 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		F41298182AAA12BD00C7F270 /* Environments */ = {
 			isa = PBXGroup;
 			children = (
@@ -114,10 +111,11 @@
 			children = (
 				F4BD74FE2AA9DEDA002B4FCE /* CapybaraApp.swift */,
 				73E7BF6A2AA9F09800C98894 /* AppDelegate.swift */,
-				F41298172AAA129000C7F270 /* Model */,
 				F41298162AAA127600C7F270 /* View */,
 				F412981C2AAA154700C7F270 /* BusinessLogic */,
 				F41298182AAA12BD00C7F270 /* Environments */,
+				73A4FF802AAA123E0060B736 /* DatabaseRepository.swift */,
+				73A4FF7E2AAA12020060B736 /* CategoryView.swift */,
 				F4BD75042AA9DEDB002B4FCE /* Preview Content */,
 			);
 			path = Capybara;
@@ -210,7 +208,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73A4FF812AAA123E0060B736 /* DatabaseRepository.swift in Sources */,
 				73A4FF7D2AAA02030060B736 /* StartVotingView.swift in Sources */,
+				73A4FF7F2AAA12020060B736 /* CategoryView.swift in Sources */,
 				73E7BF6B2AA9F09800C98894 /* AppDelegate.swift in Sources */,
 				F4BD75012AA9DEDA002B4FCE /* ContentView.swift in Sources */,
 				F4BD750F2AA9E18D002B4FCE /* ProjectView.swift in Sources */,
