@@ -55,6 +55,32 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F41298162AAA127600C7F270 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F4BD75002AA9DEDA002B4FCE /* ContentView.swift */,
+				73A4FF7C2AAA02030060B736 /* StartVotingView.swift */,
+				F4BD750E2AA9E18D002B4FCE /* ProjectView.swift */,
+				F4BD75102AA9E1DA002B4FCE /* GameView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F41298172AAA129000C7F270 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F41298182AAA12BD00C7F270 /* Environments */ = {
+			isa = PBXGroup;
+			children = (
+				F4BD75022AA9DEDB002B4FCE /* Assets.xcassets */,
+			);
+			path = Environments;
+			sourceTree = "<group>";
+		};
 		F4BD74F22AA9DEDA002B4FCE = {
 			isa = PBXGroup;
 			children = (
@@ -78,11 +104,9 @@
 			children = (
 				F4BD74FE2AA9DEDA002B4FCE /* CapybaraApp.swift */,
 				73E7BF6A2AA9F09800C98894 /* AppDelegate.swift */,
-				F4BD75002AA9DEDA002B4FCE /* ContentView.swift */,
-				73A4FF7C2AAA02030060B736 /* StartVotingView.swift */,
-				F4BD750E2AA9E18D002B4FCE /* ProjectView.swift */,
-				F4BD75102AA9E1DA002B4FCE /* GameView.swift */,
-				F4BD75022AA9DEDB002B4FCE /* Assets.xcassets */,
+				F41298172AAA129000C7F270 /* Model */,
+				F41298162AAA127600C7F270 /* View */,
+				F41298182AAA12BD00C7F270 /* Environments */,
 				F4BD75042AA9DEDB002B4FCE /* Preview Content */,
 			);
 			path = Capybara;

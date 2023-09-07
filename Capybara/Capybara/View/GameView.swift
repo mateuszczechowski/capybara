@@ -10,6 +10,8 @@ import SwiftUI
 struct GameView: View {
     var body: some View {
         Canvas { context, size in
+            
+
             let ballDiameter = min(size.width, size.height) * 0.1
             let ballSize = CGSize(width: ballDiameter, height: ballDiameter)
             let ballOrigin = CGPoint(x: (size.width - ballDiameter) * 0.5, y: (size.height - ballDiameter) * 0.4)
