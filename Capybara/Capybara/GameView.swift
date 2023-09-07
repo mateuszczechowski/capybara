@@ -10,9 +10,15 @@ import SwiftUI
 struct GameView: View {
     var body: some View {
         Canvas { context, size in
-            let ballOrigin = CGPoint(x: size.width * 0.5, y: size.height * 0.5)
-            let rect = CGRect(x: size.width * 0.5, y: size.height * 0.5, width: size.width * 0.1, height: size.height * 0.1)
-            var path = Path(ellipseIn: rect)
+            let ballDiameter = min(size.width, size.height) * 0.1
+            let ballSize = CGSize(width: ballDiameter, height: ballDiameter)
+            let ballOrigin = CGPoint(x: (size.width - ballDiameter) * 0.5, y: (size.height - ballDiameter) * 0.4)
+            let ballRect = CGRect(origin: ballOrigin, size: ballSize)
+            var path = Path(ellipseIn: ballRect)
+
+
+
+            context.fill(path, with: .color(.orange))
         }
     }
 }
