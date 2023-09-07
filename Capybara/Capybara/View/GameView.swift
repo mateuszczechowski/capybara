@@ -11,8 +11,7 @@ struct GameView: View {
     @EnvironmentObject private var motionDataManager: MotionDataManager
 
     var body: some View {
-        motionDataManager.motionManager.startGyroUpdates()
-
+        startGyros()
         return Canvas { context, size in
             
 
@@ -26,6 +25,10 @@ struct GameView: View {
 
             context.fill(path, with: .color(.orange))
         }
+    }
+
+    private func startGyros() {
+        motionDataManager.motionManager.startGyroUpdates()
     }
 }
 
