@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		73E7BF662AA9E2E300C98894 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 73E7BF652AA9E2E300C98894 /* GoogleService-Info.plist */; };
+		738A65502AA9F56100D2E27F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 738A654F2AA9F56100D2E27F /* GoogleService-Info.plist */; };
 		73E7BF692AA9E4F800C98894 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 73E7BF682AA9E4F800C98894 /* FirebaseAnalyticsWithoutAdIdSupport */; };
 		73E7BF6B2AA9F09800C98894 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E7BF6A2AA9F09800C98894 /* AppDelegate.swift */; };
 		73E7BF6F2AA9F2D900C98894 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 73E7BF6E2AA9F2D900C98894 /* FirebaseDatabase */; };
@@ -21,7 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		73E7BF652AA9E2E300C98894 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		738A654F2AA9F56100D2E27F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		73E7BF6A2AA9F09800C98894 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4BD74FB2AA9DEDA002B4FCE /* Capybara.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Capybara.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4BD74FE2AA9DEDA002B4FCE /* CapybaraApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapybaraApp.swift; sourceTree = "<group>"; };
@@ -56,7 +56,7 @@
 		F4BD74F22AA9DEDA002B4FCE = {
 			isa = PBXGroup;
 			children = (
-				73E7BF652AA9E2E300C98894 /* GoogleService-Info.plist */,
+				738A654F2AA9F56100D2E27F /* GoogleService-Info.plist */,
 				F4BD74FD2AA9DEDA002B4FCE /* Capybara */,
 				F4BD74FC2AA9DEDA002B4FCE /* Products */,
 				73E7BF672AA9E4F800C98894 /* Frameworks */,
@@ -161,7 +161,7 @@
 			files = (
 				F4BD75062AA9DEDB002B4FCE /* Preview Assets.xcassets in Resources */,
 				F4BD75032AA9DEDB002B4FCE /* Assets.xcassets in Resources */,
-				73E7BF662AA9E2E300C98894 /* GoogleService-Info.plist in Resources */,
+				738A65502AA9F56100D2E27F /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,7 +233,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -287,7 +287,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
