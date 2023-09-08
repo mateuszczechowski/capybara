@@ -11,28 +11,33 @@ struct StartVotingView: View {
 
     @State private var isVotingPopoverPresented: Bool = false
 
-    let repository: DatabaseRepository
+    @EnvironmentObject var repository: DatabaseRepository
 
     var body: some View {
-        
-        Button(action: {
-            self.isVotingPopoverPresented = true
-        }) {
-            Text("VOTE")
-                .font(.largeTitle)
-                .frame(width: 260, height: 260)
-                .foregroundColor(Color.white)
+        VStack {
+            Button(action: {
+                self.isVotingPopoverPresented = true
+            }) {
+                Text("VOTE")
+                    .font(.largeTitle)
+                    .frame(width: 260, height: 260)
+                    .foregroundColor(Color.brown)
+            }
+            .background(Color.white)
+            .clipShape(Circle())
+            .fullScreenCover(isPresented: $isVotingPopoverPresented) {
+                ProjectView(isPresented: $isVotingPopoverPresented).onAppear {
+                    repository.reloadData()
+                }
+            }
         }
-        .background(Color.red)
-        .clipShape(Circle())
-        .fullScreenCover(isPresented: $isVotingPopoverPresented) {
-            ProjectView(isPresented: $isVotingPopoverPresented)
-        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color.brown)
     }
 }
 
 struct StartVotingView_Previews: PreviewProvider {
     static var previews: some View {
-        StartVotingView(repository: DatabaseRepository())
+        StartVotingView()
     }
 }
