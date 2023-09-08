@@ -9,6 +9,7 @@ import SwiftUI
 import CoreMotion
 
 struct GameView: View {
+    @EnvironmentObject private var repository: DatabaseRepository
     @EnvironmentObject private var motionDataManager: MotionDataManager
     @State private var gyroData: CMGyroData?
     @State private var appleAxisPoint: CGPoint?
@@ -215,6 +216,13 @@ struct GameView: View {
     private func startGyros() {
         motionDataManager.motionManager.startGyroUpdates(to: .main) { gyroData, _ in
             self.gyroData = gyroData
+        }
+    }
+
+    private func updateHighscore() {
+        let highscore = repository.highscore
+        if score > highscore {
+            repository.updateHighscore(score: score)
         }
     }
 }

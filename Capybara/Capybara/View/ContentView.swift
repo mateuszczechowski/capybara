@@ -23,6 +23,7 @@ struct ContentView: View {
                 }
                 .toolbarBackground(.visible, for: .tabBar)
                 .toolbarBackground(.white, for: .tabBar)
+                .environmentObject(DatabaseRepository())
         }
         .tint(.mahogany)
 
