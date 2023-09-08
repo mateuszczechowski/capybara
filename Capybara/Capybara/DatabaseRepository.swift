@@ -7,15 +7,16 @@
 
 import Foundation
 import FirebaseDatabase
+import CodableFirebase
 
-struct Category {
+class Category: Codable {
     let title: String
 
     init(title: String) {
         self.title = title
     }
 
-    init?(dictionary: [String : Any]) {
+    convenience init?(dictionary: [String : Any]) {
         guard let title = dictionary["title"] as? String else { return nil }
 
         self.init(title: title)
@@ -23,44 +24,36 @@ struct Category {
 }
 
 class DatabaseRepository {
-    let ref = Database.database(url: "https://capybara-d1f5f-default-rtdb.europe-west1.firebasedatabase.app").reference()
+
+    var categories: [Category] = []
+
+    private let ref = Database
+        .database(url: "https://capybara-d1f5f-default-rtdb.europe-west1.firebasedatabase.app")
+        .reference()
 
     init() {
-//        getData()
-        categories()
+        reloadCategories()
     }
 
-    func categories() -> [Category] {
-        ref.getData(completion:  { error, snapshot in
-            guard error == nil else {
+    func reloadCategories() {
+
+        ref.getData(completion:  { [weak self] error, snapshot in
+            guard error == nil, let snapshot else {
                 print(error!.localizedDescription)
-                return;
+                return
             }
-            for ele in snapshot!.children {
-                if let snap = ele as? DataSnapshot {
-                    guard let json = snapshot?.value as? [String: Any] else {
-                        return
-                    }
-                    print("@@@ TEST: ", Category(dictionary: json))
+
+            let firstDict = snapshot.value as? [String: Any]
+            var categories: [Category] = []
+            for i in firstDict?["categories"] as! [[String: Any]] {
+                guard let category = Category(dictionary: i) else {
+                    return
                 }
+                categories.append(category)
             }
-//            let dict = snapshot?.value as? [String: Any]
-//            let array = dict?["categories"] as? [Any]
-//            print("@@@ TEST: ", array)
-//            print("@@@ CAT:", Category(dictionary: title["categories"] as? [String: Any]))
+
+            self?.categories = categories
         })
 
-        return []
-    }
-
-    func getData() {
-        ref.child("categories").getData(completion:  { error, snapshot in
-            guard error == nil else {
-                print(error!.localizedDescription)
-                return;
-            }
-            let test = snapshot?.value
-            print("@@@ TEST: ", test)
-        })
     }
 }
