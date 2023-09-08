@@ -7,6 +7,7 @@
 
 import SwiftUI
 import CoreMotion
+import CoreHaptics
 
 struct GameView: View {
     @EnvironmentObject private var repository: DatabaseRepository
@@ -18,6 +19,7 @@ struct GameView: View {
     @State private var score = 0
     @State private var scoreMultiplier = 0.0
     @State private var initialTime = Date.now
+    @State private var engine: CHHapticEngine?
 
     var message1: AttributedString {
         var result = AttributedString("The calmest capybara is ")
@@ -69,14 +71,18 @@ struct GameView: View {
                     appleAxisPoint = CGPoint(x: size.width * 0.5, y: size.height * 0.501 + appleRadius)
                     return
                 }
+
+                let level = min(score / 5000, 4)
+                let additionalSpeed = Double(level) * 0.025
+                print(additionalSpeed, level, score)
                 switch abs(size.width * 0.5 - appleAxisPoint.x) {
                 case 0..<size.width * 0.01:
                     appleAxisPoint.y = size.height * 0.504 + appleRadius
                     appleAxisPoint.x += zRotation * 2
                     if size.width * 0.5 > appleAxisPoint.x {
-                        appleAxisPoint.x -= 0.2
+                        appleAxisPoint.x -= 0.2 + additionalSpeed
                     } else {
-                        appleAxisPoint.x += 0.2
+                        appleAxisPoint.x += 0.2 + additionalSpeed
                     }
                     self.appleAxisPoint = appleAxisPoint
                     score = Int(time * scoreMultiplier)
@@ -84,9 +90,9 @@ struct GameView: View {
                     appleAxisPoint.y = size.height * 0.505 + appleRadius
                     appleAxisPoint.x += zRotation * 2
                     if size.width * 0.5 > appleAxisPoint.x {
-                        appleAxisPoint.x -= 0.3
+                        appleAxisPoint.x -= 0.3 + additionalSpeed
                     } else {
-                        appleAxisPoint.x += 0.3
+                        appleAxisPoint.x += 0.3 + additionalSpeed
                     }
                     self.appleAxisPoint = appleAxisPoint
                     score = Int(time * scoreMultiplier)
@@ -94,9 +100,9 @@ struct GameView: View {
                     appleAxisPoint.y = size.height * 0.506 + appleRadius
                     appleAxisPoint.x += zRotation * 2
                     if size.width * 0.5 > appleAxisPoint.x {
-                        appleAxisPoint.x -= 0.4
+                        appleAxisPoint.x -= 0.4 + additionalSpeed
                     } else {
-                        appleAxisPoint.x += 0.4
+                        appleAxisPoint.x += 0.4 + additionalSpeed
                     }
                     self.appleAxisPoint = appleAxisPoint
                     score = Int(time * scoreMultiplier)
@@ -104,9 +110,9 @@ struct GameView: View {
                     appleAxisPoint.y = size.height * 0.507 + appleRadius
                     appleAxisPoint.x += zRotation * 2
                     if size.width * 0.5 > appleAxisPoint.x {
-                        appleAxisPoint.x -= 0.5
+                        appleAxisPoint.x -= 0.5 + additionalSpeed
                     } else {
-                        appleAxisPoint.x += 0.5
+                        appleAxisPoint.x += 0.5 + additionalSpeed
                     }
                     self.appleAxisPoint = appleAxisPoint
                     score = Int(time * scoreMultiplier)
@@ -114,102 +120,112 @@ struct GameView: View {
                     appleAxisPoint.y = size.height * 0.508 + appleRadius
                     appleAxisPoint.x += zRotation * 2
                     if size.width * 0.5 > appleAxisPoint.x {
-                        appleAxisPoint.x -= 0.6
+                        appleAxisPoint.x -= 0.6 + additionalSpeed
                     } else {
-                        appleAxisPoint.x += 0.6
+                        appleAxisPoint.x += 0.6 + additionalSpeed
                     }
                     self.appleAxisPoint = appleAxisPoint
                     score = Int(time * scoreMultiplier)
+                    vibrate(0.1)
                 case size.width * 0.05..<size.width * 0.06:
                     appleAxisPoint.y = size.height * 0.509 + appleRadius
                     appleAxisPoint.x += zRotation * 2
                     if size.width * 0.5 > appleAxisPoint.x {
-                        appleAxisPoint.x -= 0.7
+                        appleAxisPoint.x -= 0.7 + additionalSpeed
                     } else {
-                        appleAxisPoint.x += 0.7
+                        appleAxisPoint.x += 0.7 + additionalSpeed
                     }
                     self.appleAxisPoint = appleAxisPoint
                     score = Int(time * scoreMultiplier)
+                    vibrate(0.2)
                 case size.width * 0.06..<size.width * 0.07:
                     appleAxisPoint.y = size.height * 0.51 + appleRadius
                     appleAxisPoint.x += zRotation * 2
                     if size.width * 0.5 > appleAxisPoint.x {
-                        appleAxisPoint.x -= 0.8
+                        appleAxisPoint.x -= 0.8 + additionalSpeed
                     } else {
-                        appleAxisPoint.x += 0.8
+                        appleAxisPoint.x += 0.8 + additionalSpeed
                     }
                     self.appleAxisPoint = appleAxisPoint
                     score = Int(time * scoreMultiplier)
+                    vibrate(0.3)
                 case size.width * 0.07..<size.width * 0.08:
                     appleAxisPoint.y = size.height * 0.512 + appleRadius
                     appleAxisPoint.x += zRotation * 2
                     if size.width * 0.5 > appleAxisPoint.x {
-                        appleAxisPoint.x -= 0.9
+                        appleAxisPoint.x -= 0.9 + additionalSpeed
                     } else {
-                        appleAxisPoint.x += 0.9
+                        appleAxisPoint.x += 0.9 + additionalSpeed
                     }
                     self.appleAxisPoint = appleAxisPoint
                     score = Int(time * scoreMultiplier)
+                    vibrate(0.4)
                 case size.width * 0.08..<size.width * 0.09:
                     appleAxisPoint.y = size.height * 0.514 + appleRadius
                     appleAxisPoint.x += zRotation * 2
                     if size.width * 0.5 > appleAxisPoint.x {
-                        appleAxisPoint.x -= 1
+                        appleAxisPoint.x -= 1 + additionalSpeed
                     } else {
-                        appleAxisPoint.x += 1
+                        appleAxisPoint.x += 1 + additionalSpeed
                     }
                     self.appleAxisPoint = appleAxisPoint
                     score = Int(time * scoreMultiplier)
+                    vibrate(0.5)
                 case size.width * 0.09..<size.width * 0.1:
                     appleAxisPoint.y = size.height * 0.516 + appleRadius
                     appleAxisPoint.x += zRotation * 2
                     if size.width * 0.5 > appleAxisPoint.x {
-                        appleAxisPoint.x -= 1.1
+                        appleAxisPoint.x -= 1.1 + additionalSpeed
                     } else {
-                        appleAxisPoint.x += 1.1
+                        appleAxisPoint.x += 1.1 + additionalSpeed
                     }
                     self.appleAxisPoint = appleAxisPoint
                     score = Int(time * scoreMultiplier)
+                    vibrate(0.6)
                 case size.width * 0.1..<size.width * 0.11:
                     appleAxisPoint.y = size.height * 0.518 + appleRadius
                     appleAxisPoint.x += zRotation * 2
                     if size.width * 0.5 > appleAxisPoint.x {
-                        appleAxisPoint.x -= 1.2
+                        appleAxisPoint.x -= 1.2 + additionalSpeed
                     } else {
-                        appleAxisPoint.x += 1.2
+                        appleAxisPoint.x += 1.2 + additionalSpeed
                     }
                     self.appleAxisPoint = appleAxisPoint
                     score = Int(time * scoreMultiplier)
+                    vibrate(0.7)
                 case size.width * 0.11..<size.width * 0.12:
                     appleAxisPoint.y = size.height * 0.52 + appleRadius
                     appleAxisPoint.x += zRotation * 2
                     if size.width * 0.5 > appleAxisPoint.x {
-                        appleAxisPoint.x -= 1.3
+                        appleAxisPoint.x -= 1.3 + additionalSpeed
                     } else {
-                        appleAxisPoint.x += 1.3
+                        appleAxisPoint.x += 1.3 + additionalSpeed
                     }
                     self.appleAxisPoint = appleAxisPoint
                     score = Int(time * scoreMultiplier)
+                    vibrate(0.8)
                 case size.width * 0.12..<size.width * 0.13:
                     appleAxisPoint.y = size.height * 0.522 + appleRadius
                     appleAxisPoint.x += zRotation * 2
                     if size.width * 0.5 > appleAxisPoint.x {
-                        appleAxisPoint.x -= 1.4
+                        appleAxisPoint.x -= 1.4 + additionalSpeed
                     } else {
-                        appleAxisPoint.x += 1.4
+                        appleAxisPoint.x += 1.4 + additionalSpeed
                     }
                     self.appleAxisPoint = appleAxisPoint
                     score = Int(time * scoreMultiplier)
+                    vibrate(0.9)
                 case size.width * 0.13..<size.width * 0.14:
                     appleAxisPoint.y = size.height * 0.524 + appleRadius
                     appleAxisPoint.x += zRotation * 2
                     if size.width * 0.5 > appleAxisPoint.x {
-                        appleAxisPoint.x -= 1.5
+                        appleAxisPoint.x -= 1.5 + additionalSpeed
                     } else {
-                        appleAxisPoint.x += 1.5
+                        appleAxisPoint.x += 1.5 + additionalSpeed
                     }
                     self.appleAxisPoint = appleAxisPoint
                     score = Int(time * scoreMultiplier)
+                    vibrate(1)
                 default:
                     let now = timeline.date.timeIntervalSinceReferenceDate
                     var delta = 0.0
@@ -244,6 +260,9 @@ struct GameView: View {
         .onDisappear(perform: {
             motionDataManager.motionManager.stopGyroUpdates()
         })
+        .onAppear(perform: {
+            prepareHaptics()
+        })
     }
 
     private func startGyros() {
@@ -256,6 +275,32 @@ struct GameView: View {
         let highscore = repository.highscore
         if score > highscore {
             repository.updateHighscore(score: score)
+        }
+    }
+
+    private func vibrate(_ value: Float) {
+        guard CHHapticEngine.capabilitiesForHardware().supportsHaptics else { return }
+        var events = [CHHapticEvent]()
+        let intensity = CHHapticEventParameter(parameterID: .hapticIntensity, value: value)
+        let sharpness = CHHapticEventParameter(parameterID: .hapticSharpness, value: value)
+        let event = CHHapticEvent(eventType: .hapticTransient, parameters: [intensity, sharpness], relativeTime: 0)
+        events.append(event)
+        do {
+            let pattern = try CHHapticPattern(events: events, parameters: [])
+            let player = try engine?.makePlayer(with: pattern)
+            try player?.start(atTime: 0)
+        } catch {
+            print("Failed to play pattern: \(error.localizedDescription).")
+        }
+    }
+
+    private func prepareHaptics() {
+        guard CHHapticEngine.capabilitiesForHardware().supportsHaptics else { return }
+        do {
+            engine = try CHHapticEngine()
+            try engine?.start()
+        } catch {
+            print("There was an error creating the engine: \(error.localizedDescription)")
         }
     }
 }
