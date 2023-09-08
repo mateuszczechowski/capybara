@@ -7,6 +7,7 @@
 
 import Foundation
 import FirebaseDatabase
+import SwiftUI
 
 class DatabaseRepository: ObservableObject {
 
@@ -14,7 +15,7 @@ class DatabaseRepository: ObservableObject {
     var projects: [Project] = []
     var highscore = 0
     var highscoreName: String = ""
-    var name: String = ""
+    @AppStorage("username") var username: String = ""
 
     private let ref = Database
         .database(url: "https://capybara-d1f5f-default-rtdb.europe-west1.firebasedatabase.app")
@@ -27,7 +28,7 @@ class DatabaseRepository: ObservableObject {
     }
 
     func updateHighscore(score: Int) {
-        ref.updateChildValues(["highscore": score, "highscoreName": name])
+        ref.updateChildValues(["highscore": score, "highscoreName": username])
     }
 
     func observeHighscoreName() {

@@ -26,7 +26,7 @@ struct ContentView: View {
                 .environmentObject(DatabaseRepository())
         }
         .tint(.mahogany)
-
+        .preferredColorScheme(.light)
     }
 }
 
