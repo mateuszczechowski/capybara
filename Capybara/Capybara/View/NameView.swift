@@ -9,14 +9,12 @@ import SwiftUI
 
 struct NameView: View {
 
-    @State var name: String = ""
+    @AppStorage("username") var username: String = ""
     @EnvironmentObject var repository: DatabaseRepository
 
     var body: some View {
         VStack {
-            TextField("Enter your name", text: $name) { _ in
-                self.repository.name = name
-            }
+            TextField("Enter your name", text: $username)
             .multilineTextAlignment(.center)
             .tint(.white)
         }
