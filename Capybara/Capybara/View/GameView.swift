@@ -7,6 +7,7 @@
 
 import SwiftUI
 import CoreMotion
+import CoreHaptics
 
 struct GameView: View {
     @EnvironmentObject private var repository: DatabaseRepository
@@ -18,9 +19,11 @@ struct GameView: View {
     @State private var score = 0
     @State private var scoreMultiplier = 0.0
     @State private var initialTime = Date.now
+    @State private var engine: CHHapticEngine?
 
     var body: some View {
         startGyros()
+//        prepareHaptics()
         return TimelineView(.animation) { timeline in
             Canvas { context, size in
                 // Draw a highscore.
@@ -226,6 +229,21 @@ struct GameView: View {
         let highscore = repository.highscore
         if score > highscore {
             repository.updateHighscore(score: score)
+        }
+    }
+
+    private func vibrate() {
+
+    }
+
+    private func prepareHaptics() {
+        guard CHHapticEngine.capabilitiesForHardware().supportsHaptics else { return }
+
+        do {
+            engine = try CHHapticEngine()
+            try engine?.start()
+        } catch {
+            print("There was an error creating the engine: \(error.localizedDescription)")
         }
     }
 }
