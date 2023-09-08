@@ -24,7 +24,7 @@ struct GameView: View {
         return TimelineView(.animation) { timeline in
             Canvas { context, size in
                 // Draw a highscore.
-                context.draw(Text("Highscore: \(repository.highscore)").bold(), in: CGRect(x: size.width * 0.1, y: size.height * 0.1, width: size.width, height: size.height * 0.2))
+                context.draw(Text("Highscore: \(repository.highscoreName) \(repository.highscore)").bold(), in: CGRect(x: size.width * 0.1, y: size.height * 0.1, width: size.width, height: size.height * 0.2))
                 // Draw a score.
                 let time = timeline.date.timeIntervalSince(initialTime)
                 scoreMultiplier += abs(gyroData?.rotationRate.z ?? 0) * 5

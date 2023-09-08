@@ -20,6 +20,7 @@
 		73F836092AAB065B00557701 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F836082AAB065B00557701 /* Project.swift */; };
 		73F8360B2AAB0D7300557701 /* VotingForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F8360A2AAB0D7300557701 /* VotingForm.swift */; };
 		73F8360D2AAB2A1800557701 /* ThemeColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F8360C2AAB2A1800557701 /* ThemeColor.swift */; };
+		73F8360F2AAB331A00557701 /* NameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F8360E2AAB331A00557701 /* NameView.swift */; };
 		F412981E2AAA156B00C7F270 /* MotionDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F412981D2AAA156B00C7F270 /* MotionDataManager.swift */; };
 		F4BD74FF2AA9DEDA002B4FCE /* CapybaraApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BD74FE2AA9DEDA002B4FCE /* CapybaraApp.swift */; };
 		F4BD75012AA9DEDA002B4FCE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BD75002AA9DEDA002B4FCE /* ContentView.swift */; };
@@ -40,6 +41,7 @@
 		73F836082AAB065B00557701 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		73F8360A2AAB0D7300557701 /* VotingForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VotingForm.swift; sourceTree = "<group>"; };
 		73F8360C2AAB2A1800557701 /* ThemeColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeColor.swift; sourceTree = "<group>"; };
+		73F8360E2AAB331A00557701 /* NameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameView.swift; sourceTree = "<group>"; };
 		F412981D2AAA156B00C7F270 /* MotionDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionDataManager.swift; sourceTree = "<group>"; };
 		F412981F2AAA1F8E00C7F270 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F4BD74FB2AA9DEDA002B4FCE /* Capybara.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Capybara.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				F4BD75002AA9DEDA002B4FCE /* ContentView.swift */,
+				73F8360E2AAB331A00557701 /* NameView.swift */,
 				73A4FF7C2AAA02030060B736 /* StartVotingView.swift */,
 				F4BD750E2AA9E18D002B4FCE /* ProjectView.swift */,
 				73F836012AAB028B00557701 /* VotingView.swift */,
@@ -235,6 +238,7 @@
 			files = (
 				73A4FF812AAA123E0060B736 /* DatabaseRepository.swift in Sources */,
 				73A4FF7D2AAA02030060B736 /* StartVotingView.swift in Sources */,
+				73F8360F2AAB331A00557701 /* NameView.swift in Sources */,
 				73A4FF7F2AAA12020060B736 /* CategoryView.swift in Sources */,
 				73E7BF6B2AA9F09800C98894 /* AppDelegate.swift in Sources */,
 				73F836092AAB065B00557701 /* Project.swift in Sources */,

@@ -26,10 +26,10 @@ struct ProjectView: View {
                 List(repository.projects) { project in
 
                     NavigationLink {
-                        VotingView(
-                            votingForm: VotingForm(selectedProject: project),
-                            isPresented: $isPresented
-                        )
+//                        VotingView(
+//                            votingForm: VotingForm(selectedProject: project),
+//                            isPresented: $isPresented
+//                        )
                     } label: {
                         Text(project.name)
                     }

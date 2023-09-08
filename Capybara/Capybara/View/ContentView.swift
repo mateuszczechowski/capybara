@@ -10,9 +10,9 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         TabView {
-            StartVotingView()
+            NameView()
                 .tabItem {
-                    Label("Vote", image: "Vote")
+                    Label("Me", image: "Vote")
                 }
                 .toolbarBackground(.visible, for: .tabBar)
                 .toolbarBackground(.white, for: .tabBar)

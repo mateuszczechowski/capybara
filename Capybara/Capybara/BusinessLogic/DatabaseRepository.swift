@@ -13,6 +13,8 @@ class DatabaseRepository: ObservableObject {
     var categories: [Category] = []
     var projects: [Project] = []
     var highscore = 0
+    var highscoreName: String = ""
+    var name: String = ""
 
     private let ref = Database
         .database(url: "https://capybara-d1f5f-default-rtdb.europe-west1.firebasedatabase.app")
@@ -21,10 +23,21 @@ class DatabaseRepository: ObservableObject {
     init() {
         reloadData()
         observeHighscore()
+        observeHighscoreName()
     }
 
     func updateHighscore(score: Int) {
-        ref.updateChildValues(["highscore": score])
+        ref.updateChildValues(["highscore": score, "highscoreName": name])
+    }
+
+    func observeHighscoreName() {
+        ref.child("highscoreName").observe(.value) { snapshot in
+            guard let hsName = snapshot.value as? String else {
+                return
+            }
+
+            self.highscoreName = hsName
+        }
     }
 
     func observeHighscore() {
