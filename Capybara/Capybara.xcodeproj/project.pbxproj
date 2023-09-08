@@ -15,6 +15,11 @@
 		73E7BF6B2AA9F09800C98894 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E7BF6A2AA9F09800C98894 /* AppDelegate.swift */; };
 		73E7BF6F2AA9F2D900C98894 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 73E7BF6E2AA9F2D900C98894 /* FirebaseDatabase */; };
 		73E7BF712AA9F2D900C98894 /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 73E7BF702AA9F2D900C98894 /* FirebaseDatabaseSwift */; };
+		73F836022AAB028B00557701 /* VotingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F836012AAB028B00557701 /* VotingView.swift */; };
+		73F836072AAB065700557701 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F836062AAB065700557701 /* Category.swift */; };
+		73F836092AAB065B00557701 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F836082AAB065B00557701 /* Project.swift */; };
+		73F8360B2AAB0D7300557701 /* VotingForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F8360A2AAB0D7300557701 /* VotingForm.swift */; };
+		73F8360D2AAB2A1800557701 /* ThemeColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F8360C2AAB2A1800557701 /* ThemeColor.swift */; };
 		F412981E2AAA156B00C7F270 /* MotionDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F412981D2AAA156B00C7F270 /* MotionDataManager.swift */; };
 		F4BD74FF2AA9DEDA002B4FCE /* CapybaraApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BD74FE2AA9DEDA002B4FCE /* CapybaraApp.swift */; };
 		F4BD75012AA9DEDA002B4FCE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BD75002AA9DEDA002B4FCE /* ContentView.swift */; };
@@ -30,6 +35,11 @@
 		73A4FF7E2AAA12020060B736 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		73A4FF802AAA123E0060B736 /* DatabaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseRepository.swift; sourceTree = "<group>"; };
 		73E7BF6A2AA9F09800C98894 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		73F836012AAB028B00557701 /* VotingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VotingView.swift; sourceTree = "<group>"; };
+		73F836062AAB065700557701 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		73F836082AAB065B00557701 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
+		73F8360A2AAB0D7300557701 /* VotingForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VotingForm.swift; sourceTree = "<group>"; };
+		73F8360C2AAB2A1800557701 /* ThemeColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeColor.swift; sourceTree = "<group>"; };
 		F412981D2AAA156B00C7F270 /* MotionDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionDataManager.swift; sourceTree = "<group>"; };
 		F4BD74FB2AA9DEDA002B4FCE /* Capybara.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Capybara.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4BD74FE2AA9DEDA002B4FCE /* CapybaraApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapybaraApp.swift; sourceTree = "<group>"; };
@@ -61,12 +71,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		73F836052AAB064E00557701 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				73F836062AAB065700557701 /* Category.swift */,
+				73F836082AAB065B00557701 /* Project.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		F41298162AAA127600C7F270 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				F4BD75002AA9DEDA002B4FCE /* ContentView.swift */,
 				73A4FF7C2AAA02030060B736 /* StartVotingView.swift */,
 				F4BD750E2AA9E18D002B4FCE /* ProjectView.swift */,
+				73F836012AAB028B00557701 /* VotingView.swift */,
 				F4BD75102AA9E1DA002B4FCE /* GameView.swift */,
 			);
 			path = View;
@@ -76,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				F4BD75022AA9DEDB002B4FCE /* Assets.xcassets */,
+				73F8360C2AAB2A1800557701 /* ThemeColor.swift */,
 			);
 			path = Environments;
 			sourceTree = "<group>";
@@ -83,7 +104,10 @@
 		F412981C2AAA154700C7F270 /* BusinessLogic */ = {
 			isa = PBXGroup;
 			children = (
+				73F836052AAB064E00557701 /* Model */,
+				73A4FF802AAA123E0060B736 /* DatabaseRepository.swift */,
 				F412981D2AAA156B00C7F270 /* MotionDataManager.swift */,
+				73F8360A2AAB0D7300557701 /* VotingForm.swift */,
 			);
 			path = BusinessLogic;
 			sourceTree = "<group>";
@@ -114,7 +138,6 @@
 				F41298162AAA127600C7F270 /* View */,
 				F412981C2AAA154700C7F270 /* BusinessLogic */,
 				F41298182AAA12BD00C7F270 /* Environments */,
-				73A4FF802AAA123E0060B736 /* DatabaseRepository.swift */,
 				73A4FF7E2AAA12020060B736 /* CategoryView.swift */,
 				F4BD75042AA9DEDB002B4FCE /* Preview Content */,
 			);
@@ -212,11 +235,16 @@
 				73A4FF7D2AAA02030060B736 /* StartVotingView.swift in Sources */,
 				73A4FF7F2AAA12020060B736 /* CategoryView.swift in Sources */,
 				73E7BF6B2AA9F09800C98894 /* AppDelegate.swift in Sources */,
+				73F836092AAB065B00557701 /* Project.swift in Sources */,
+				73F8360D2AAB2A1800557701 /* ThemeColor.swift in Sources */,
+				73F8360B2AAB0D7300557701 /* VotingForm.swift in Sources */,
 				F4BD75012AA9DEDA002B4FCE /* ContentView.swift in Sources */,
+				73F836022AAB028B00557701 /* VotingView.swift in Sources */,
 				F4BD750F2AA9E18D002B4FCE /* ProjectView.swift in Sources */,
 				F4BD75112AA9E1DA002B4FCE /* GameView.swift in Sources */,
 				F4BD74FF2AA9DEDA002B4FCE /* CapybaraApp.swift in Sources */,
 				F412981E2AAA156B00C7F270 /* MotionDataManager.swift in Sources */,
+				73F836072AAB065700557701 /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

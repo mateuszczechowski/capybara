@@ -10,20 +10,21 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         TabView {
-            StartVotingView(repository: DatabaseRepository())
+            StartVotingView()
                 .tabItem {
                     Label("Vote", image: "Vote")
                 }
                 .toolbarBackground(.visible, for: .tabBar)
-                .toolbarBackground(.ultraThinMaterial, for: .tabBar)
+                .toolbarBackground(.white, for: .tabBar)
+                .environmentObject(DatabaseRepository())
             GameView()
                 .tabItem {
                     Label("Capybara", image: "Capybara")
                 }
                 .toolbarBackground(.visible, for: .tabBar)
-                .toolbarBackground(.ultraThinMaterial, for: .tabBar)
+                .toolbarBackground(.white, for: .tabBar)
         }
-        .tint(.brown)
+        .tint(.mahogany)
 
     }
 }
