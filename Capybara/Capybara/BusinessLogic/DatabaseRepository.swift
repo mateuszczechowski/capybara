@@ -15,6 +15,8 @@ class DatabaseRepository: ObservableObject {
     var projects: [Project] = []
     var highscore = 0
     var highscoreName: String = ""
+    var speedMultipier: Double = 0.025
+    var minimumLevel: Int = 0
     @AppStorage("username") var username: String = ""
 
     private let ref = Database
@@ -25,10 +27,32 @@ class DatabaseRepository: ObservableObject {
         reloadData()
         observeHighscore()
         observeHighscoreName()
+        observeLevelDivider()
+        observeSpeedMultiplier()
     }
 
     func updateHighscore(score: Int) {
         ref.updateChildValues(["highscore": score, "highscoreName": username])
+    }
+
+    func observeLevelDivider() {
+        ref.child("levelDivider").observe(.value) { snapshot in
+            guard let level = snapshot.value as? Int else {
+                return
+            }
+
+            self.minimumLevel = level
+        }
+    }
+
+    func observeSpeedMultiplier() {
+        ref.child("speedMultiplier").observe(.value) { snapshot in
+            guard let speed = snapshot.value as? Double else {
+                return
+            }
+
+            self.speedMultipier = speed
+        }
     }
 
     func observeHighscoreName() {
