@@ -41,14 +41,18 @@ struct GameView: View {
                     appleAxisPoint = CGPoint(x: size.width * 0.5, y: size.height * 0.501 + appleRadius)
                     return
                 }
+
+                let level = min(score / 5000, 4)
+                let additionalSpeed = Double(level) * 0.025
+                print(additionalSpeed, level, score)
                 switch abs(size.width * 0.5 - appleAxisPoint.x) {
                 case 0..<size.width * 0.01:
                     appleAxisPoint.y = size.height * 0.504 + appleRadius
                     appleAxisPoint.x += zRotation * 2
                     if size.width * 0.5 > appleAxisPoint.x {
-                        appleAxisPoint.x -= 0.2
+                        appleAxisPoint.x -= 0.2 + additionalSpeed
                     } else {
-                        appleAxisPoint.x += 0.2
+                        appleAxisPoint.x += 0.2 + additionalSpeed
                     }
                     self.appleAxisPoint = appleAxisPoint
                     score = Int(time * scoreMultiplier)
@@ -56,9 +60,9 @@ struct GameView: View {
                     appleAxisPoint.y = size.height * 0.505 + appleRadius
                     appleAxisPoint.x += zRotation * 2
                     if size.width * 0.5 > appleAxisPoint.x {
-                        appleAxisPoint.x -= 0.3
+                        appleAxisPoint.x -= 0.3 + additionalSpeed
                     } else {
-                        appleAxisPoint.x += 0.3
+                        appleAxisPoint.x += 0.3 + additionalSpeed
                     }
                     self.appleAxisPoint = appleAxisPoint
                     score = Int(time * scoreMultiplier)
@@ -66,9 +70,9 @@ struct GameView: View {
                     appleAxisPoint.y = size.height * 0.506 + appleRadius
                     appleAxisPoint.x += zRotation * 2
                     if size.width * 0.5 > appleAxisPoint.x {
-                        appleAxisPoint.x -= 0.4
+                        appleAxisPoint.x -= 0.4 + additionalSpeed
                     } else {
-                        appleAxisPoint.x += 0.4
+                        appleAxisPoint.x += 0.4 + additionalSpeed
                     }
                     self.appleAxisPoint = appleAxisPoint
                     score = Int(time * scoreMultiplier)
@@ -76,9 +80,9 @@ struct GameView: View {
                     appleAxisPoint.y = size.height * 0.507 + appleRadius
                     appleAxisPoint.x += zRotation * 2
                     if size.width * 0.5 > appleAxisPoint.x {
-                        appleAxisPoint.x -= 0.5
+                        appleAxisPoint.x -= 0.5 + additionalSpeed
                     } else {
-                        appleAxisPoint.x += 0.5
+                        appleAxisPoint.x += 0.5 + additionalSpeed
                     }
                     self.appleAxisPoint = appleAxisPoint
                     score = Int(time * scoreMultiplier)
@@ -86,9 +90,9 @@ struct GameView: View {
                     appleAxisPoint.y = size.height * 0.508 + appleRadius
                     appleAxisPoint.x += zRotation * 2
                     if size.width * 0.5 > appleAxisPoint.x {
-                        appleAxisPoint.x -= 0.6
+                        appleAxisPoint.x -= 0.6 + additionalSpeed
                     } else {
-                        appleAxisPoint.x += 0.6
+                        appleAxisPoint.x += 0.6 + additionalSpeed
                     }
                     self.appleAxisPoint = appleAxisPoint
                     score = Int(time * scoreMultiplier)
@@ -97,9 +101,9 @@ struct GameView: View {
                     appleAxisPoint.y = size.height * 0.509 + appleRadius
                     appleAxisPoint.x += zRotation * 2
                     if size.width * 0.5 > appleAxisPoint.x {
-                        appleAxisPoint.x -= 0.7
+                        appleAxisPoint.x -= 0.7 + additionalSpeed
                     } else {
-                        appleAxisPoint.x += 0.7
+                        appleAxisPoint.x += 0.7 + additionalSpeed
                     }
                     self.appleAxisPoint = appleAxisPoint
                     score = Int(time * scoreMultiplier)
@@ -108,9 +112,9 @@ struct GameView: View {
                     appleAxisPoint.y = size.height * 0.51 + appleRadius
                     appleAxisPoint.x += zRotation * 2
                     if size.width * 0.5 > appleAxisPoint.x {
-                        appleAxisPoint.x -= 0.8
+                        appleAxisPoint.x -= 0.8 + additionalSpeed
                     } else {
-                        appleAxisPoint.x += 0.8
+                        appleAxisPoint.x += 0.8 + additionalSpeed
                     }
                     self.appleAxisPoint = appleAxisPoint
                     score = Int(time * scoreMultiplier)
@@ -119,9 +123,9 @@ struct GameView: View {
                     appleAxisPoint.y = size.height * 0.512 + appleRadius
                     appleAxisPoint.x += zRotation * 2
                     if size.width * 0.5 > appleAxisPoint.x {
-                        appleAxisPoint.x -= 0.9
+                        appleAxisPoint.x -= 0.9 + additionalSpeed
                     } else {
-                        appleAxisPoint.x += 0.9
+                        appleAxisPoint.x += 0.9 + additionalSpeed
                     }
                     self.appleAxisPoint = appleAxisPoint
                     score = Int(time * scoreMultiplier)
@@ -130,9 +134,9 @@ struct GameView: View {
                     appleAxisPoint.y = size.height * 0.514 + appleRadius
                     appleAxisPoint.x += zRotation * 2
                     if size.width * 0.5 > appleAxisPoint.x {
-                        appleAxisPoint.x -= 1
+                        appleAxisPoint.x -= 1 + additionalSpeed
                     } else {
-                        appleAxisPoint.x += 1
+                        appleAxisPoint.x += 1 + additionalSpeed
                     }
                     self.appleAxisPoint = appleAxisPoint
                     score = Int(time * scoreMultiplier)
@@ -141,9 +145,9 @@ struct GameView: View {
                     appleAxisPoint.y = size.height * 0.516 + appleRadius
                     appleAxisPoint.x += zRotation * 2
                     if size.width * 0.5 > appleAxisPoint.x {
-                        appleAxisPoint.x -= 1.1
+                        appleAxisPoint.x -= 1.1 + additionalSpeed
                     } else {
-                        appleAxisPoint.x += 1.1
+                        appleAxisPoint.x += 1.1 + additionalSpeed
                     }
                     self.appleAxisPoint = appleAxisPoint
                     score = Int(time * scoreMultiplier)
@@ -152,9 +156,9 @@ struct GameView: View {
                     appleAxisPoint.y = size.height * 0.518 + appleRadius
                     appleAxisPoint.x += zRotation * 2
                     if size.width * 0.5 > appleAxisPoint.x {
-                        appleAxisPoint.x -= 1.2
+                        appleAxisPoint.x -= 1.2 + additionalSpeed
                     } else {
-                        appleAxisPoint.x += 1.2
+                        appleAxisPoint.x += 1.2 + additionalSpeed
                     }
                     self.appleAxisPoint = appleAxisPoint
                     score = Int(time * scoreMultiplier)
@@ -163,9 +167,9 @@ struct GameView: View {
                     appleAxisPoint.y = size.height * 0.52 + appleRadius
                     appleAxisPoint.x += zRotation * 2
                     if size.width * 0.5 > appleAxisPoint.x {
-                        appleAxisPoint.x -= 1.3
+                        appleAxisPoint.x -= 1.3 + additionalSpeed
                     } else {
-                        appleAxisPoint.x += 1.3
+                        appleAxisPoint.x += 1.3 + additionalSpeed
                     }
                     self.appleAxisPoint = appleAxisPoint
                     score = Int(time * scoreMultiplier)
@@ -174,9 +178,9 @@ struct GameView: View {
                     appleAxisPoint.y = size.height * 0.522 + appleRadius
                     appleAxisPoint.x += zRotation * 2
                     if size.width * 0.5 > appleAxisPoint.x {
-                        appleAxisPoint.x -= 1.4
+                        appleAxisPoint.x -= 1.4 + additionalSpeed
                     } else {
-                        appleAxisPoint.x += 1.4
+                        appleAxisPoint.x += 1.4 + additionalSpeed
                     }
                     self.appleAxisPoint = appleAxisPoint
                     score = Int(time * scoreMultiplier)
@@ -185,9 +189,9 @@ struct GameView: View {
                     appleAxisPoint.y = size.height * 0.524 + appleRadius
                     appleAxisPoint.x += zRotation * 2
                     if size.width * 0.5 > appleAxisPoint.x {
-                        appleAxisPoint.x -= 1.5
+                        appleAxisPoint.x -= 1.5 + additionalSpeed
                     } else {
-                        appleAxisPoint.x += 1.5
+                        appleAxisPoint.x += 1.5 + additionalSpeed
                     }
                     self.appleAxisPoint = appleAxisPoint
                     score = Int(time * scoreMultiplier)
