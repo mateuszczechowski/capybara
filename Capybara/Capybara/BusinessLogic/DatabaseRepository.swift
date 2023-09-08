@@ -24,7 +24,7 @@ class DatabaseRepository: ObservableObject {
     }
 
     func updateHighscore(score: Int) {
-
+        ref.updateChildValues(["highscore": score])
     }
 
     func observeHighscore() {

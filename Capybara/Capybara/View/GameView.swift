@@ -23,10 +23,12 @@ struct GameView: View {
         startGyros()
         return TimelineView(.animation) { timeline in
             Canvas { context, size in
+                // Draw a highscore.
+                context.draw(Text("Highscore: \(repository.highscore)").bold(), in: CGRect(x: size.width * 0.1, y: size.height * 0.1, width: size.width, height: size.height * 0.2))
                 // Draw a score.
                 let time = timeline.date.timeIntervalSince(initialTime)
                 scoreMultiplier += abs(gyroData?.rotationRate.z ?? 0) * 5
-                context.draw(Text("Score: \(score)").bold(), in: CGRect(x: size.width * 0.1, y: size.height * 0.1, width: size.width, height: size.height * 0.2))
+                context.draw(Text("Score: \(score)").bold(), in: CGRect(x: size.width * 0.1, y: size.height * 0.15, width: size.width, height: size.height * 0.2))
                 // Draw a capybara.
                 let image = context.resolve(Image("Capybara.large"))
                 context.draw(image, in: CGRect(x: 0, y: size.height * 0.462, width: size.width, height: size.width))
@@ -200,6 +202,7 @@ struct GameView: View {
                             scoreMultiplier = 0
                         }
                     }
+                    updateHighscore()
                 }
                 let appleSize = CGSize(width: appleDiameter, height: appleDiameter)
                 let appleOrigin = CGPoint(x: appleAxisPoint.x - appleRadius, y: appleAxisPoint.y - appleDiameter)
@@ -231,5 +234,6 @@ struct GameView_Previews: PreviewProvider {
     static var previews: some View {
         GameView()
             .environmentObject(MotionDataManager())
+            .environmentObject(DatabaseRepository())
     }
 }
