@@ -22,7 +22,6 @@ class DatabaseRepository: ObservableObject {
         .reference()
 
     init() {
-        reloadData()
         observeHighscore()
         observeHighscoreName()
     }

@@ -44,7 +44,6 @@ struct GameView: View {
 
                 let level = min(score / 5000, 4)
                 let additionalSpeed = Double(level) * 0.025
-                print(additionalSpeed, level, score)
                 switch abs(size.width * 0.5 - appleAxisPoint.x) {
                 case 0..<size.width * 0.01:
                     appleAxisPoint.y = size.height * 0.504 + appleRadius
