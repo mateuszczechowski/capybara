@@ -19,16 +19,46 @@ struct GameView: View {
     @State private var scoreMultiplier = 0.0
     @State private var initialTime = Date.now
 
+    var message1: AttributedString {
+        var result = AttributedString("The calmest capybara is ")
+        result.foregroundColor = .black
+
+        return result
+    }
+
+    var message2: AttributedString {
+        var result = AttributedString(" with the ")
+        result.foregroundColor = .black
+        return result
+    }
+
+    var message3: AttributedString {
+        var result = AttributedString(" score points")
+        result.foregroundColor = .black
+        return result
+    }
+
+    func colored(text: String) -> AttributedString {
+        var result = AttributedString(text)
+        result.foregroundColor = .red
+        return result
+    }
+
     var body: some View {
         startGyros()
         return TimelineView(.animation) { timeline in
             Canvas { context, size in
                 // Draw a highscore.
-                context.draw(Text("Highscore: \(repository.highscoreName) \(repository.highscore)").bold(), in: CGRect(x: size.width * 0.1, y: size.height * 0.1, width: size.width, height: size.height * 0.2))
+
+                context.draw(
+
+                    Text(message1 + colored(text: repository.highscoreName) + message2 + colored(text: repository.highscore.description) + message3).bold(),
+                    in: CGRect(x: size.width * 0.1, y: size.height * 0.1, width: size.width * 0.8, height: size.height * 0.2))
+
                 // Draw a score.
                 let time = timeline.date.timeIntervalSince(initialTime)
                 scoreMultiplier += abs(gyroData?.rotationRate.z ?? 0) * 5
-                context.draw(Text("Score: \(score)").bold(), in: CGRect(x: size.width * 0.1, y: size.height * 0.15, width: size.width, height: size.height * 0.2))
+                context.draw(Text("Score: \(score)").bold(), in: CGRect(x: size.width * 0.1, y: size.height * 0.25, width: size.width, height: size.height * 0.2))
                 // Draw a capybara.
                 let image = context.resolve(Image("Capybara.large"))
                 context.draw(image, in: CGRect(x: 0, y: size.height * 0.462, width: size.width, height: size.width))

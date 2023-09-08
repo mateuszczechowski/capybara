@@ -16,7 +16,6 @@ struct NameView: View {
         VStack {
             TextField("Enter your name", text: $username)
             .multilineTextAlignment(.center)
-            .tint(.white)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .padding(24)
